@@ -1,4 +1,4 @@
-print("Rental Yield Calculator")
+print("Gross Rental Yield Calculator")
 print("-----------------------")
 
 # Get inputs
