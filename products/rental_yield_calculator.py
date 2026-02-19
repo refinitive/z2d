@@ -2,15 +2,19 @@ print("Net Rental Yield Calculator")
 print("---------------------------")
 
 # Get inputs
-purchase_price = float(input("Enter purchase price: "))
-monthly_rent = float(input("Enter monthly rent: "))
-monthly_expenses = float(input("Enter monthly operating expenses: "))
+try:
+    purchase_price = float(input("Enter purchase price: "))
+    monthly_rent = float(input("Enter monthly rent: "))
+    monthly_expenses = float(input("Enter monthly operating expenses: "))
+except ValueError:
+    print(("Invalid input. Please enter numbers only"))
+    exit()
 
 # Calculate
 annual_rent = monthly_rent * 12
 annual_expenses = monthly_expenses * 12
 net_operating_income = annual_rent - annual_expenses
-yield_percentage = (annual_rent / purchase_price) * 100
+yield_percentage = (net_operating_income / purchase_price) * 100
 
 # Output
 print("\nResults")
@@ -27,4 +31,5 @@ elif yield_percentage >= 7:
 else:
     print("Rating: Weak deal")
 
+# End
 print("---------------------------")
